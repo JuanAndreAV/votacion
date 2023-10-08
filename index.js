@@ -16,7 +16,8 @@ async function obtenerVotos(){
     })
     .then(data => {
         let tabla = document.getElementById('contenido');
-       
+        let total = document.getElementById('total') 
+        total.innerText = data.length
         let datos = "";
         for(let elemento of data){
             
@@ -33,6 +34,7 @@ async function obtenerVotos(){
          `;
         }
         tabla.innerHTML = datos;
+        alert(elemento.length)
         
     });
 
@@ -59,7 +61,7 @@ async function buscar(){
     })
     .then(data => {
        let restaurante = document.getElementById('consultar').value;
-        
+      
         let buscador = data.filter(function(diccionario){
             return diccionario.restaurantId === restaurante
         });
@@ -78,6 +80,7 @@ async function buscar(){
 
             let mostrarPromedio = document.getElementById("promedio");
             mostrarPromedio.innerText = "Promedio: "+ promedio
+            
 
             
             
