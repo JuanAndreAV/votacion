@@ -46,7 +46,7 @@ async function obtenerVotos(){
 }
 
 async function buscar(){
-    try { fetch('http://34.200.251.81/api/votes',{
+    try { await fetch('http://34.200.251.81/api/votes',{
         method: "GET",
         headers: {
           "Content-Type": "aplication/json",
